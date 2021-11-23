@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<title>array_increase demo</title>
+
+<style type="text/css">
+  body {
+    font-family: Tahoma, sans-serif;
+  }
+
+  textarea#input {
+    width: 600px;
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+  }
+
+  div#output {
+    color: #CC0000;
+  }
+</style>
+
+<h1>array_increase demo</h1>
+
+<script src="array_increase.js" charset="utf-8"></script>
+
+<p>Enter some namber:</p>
+
+<input id="input" type="text">Type array of numbers!(should be separate by ", ". Example: 9, 3, 2)
+
+<div id="output"></div>
+
+<script charset="utf-8">
+var inputEl = document.getElementById('input'),
+    outputEl = document.getElementById('output');
+
+    inputEl.addEventListener('keyup', function () {
+        outputEl.textContent = 'Count: ' + makeIncreaseSequence(inputEl.value.split(", ").map(value => +value));
+    }, false);
+</script>
